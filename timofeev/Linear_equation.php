@@ -1,19 +1,19 @@
 <?php
 
-
 namespace timofeev;
 
 
-class Linear_equation
+class LinearEquation
 {
     protected $x;
 
     public function Linear_equation($a, $b)
     {
         if ($a == 0) {
-            $error = 'error';
-            throw new Exception($error);
+            $error = 'Уравнение не существует';
+            throw new TimofeevExeption($error);
         }
+        Mylog::Instance()->log("Линейное уравнение");
         return $this->x = [(-$b) / $a];
     }
 }

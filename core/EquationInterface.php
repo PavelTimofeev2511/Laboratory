@@ -2,9 +2,7 @@
 
 
 namespace core;
-
-interface EquationInterface
-{
+interface EquationInterface {
     /**
      * @param float $a
      * @param float $b

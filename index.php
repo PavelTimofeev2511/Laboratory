@@ -3,23 +3,26 @@
 include 'core/EquationInterface.php';
 include 'core/LogInterface.php';
 include 'core/LogAbstract.php';
+
+include 'timofeev/TimofeevExeption.php';
 include 'timofeev/linear_equation.php';
 include 'timofeev/quadratic_equation.php';
 include 'timofeev/Mylog.php';
 
-$answer = new timofeev\quadratic_equation();
-$log2 = timofeev\Mylog::Instance();
+$answer = new timofeev\QuadraticEquation();
 
 
 try {
-    $a = readline("a=\n\n");
-    $b = readline("b=\n\n");
-    $c = readline("c=\n\n");
-    $result = $answer->Quadratic_equation($a, $b, $c);
+    $a = readline("a= \n\r");
+    $b = readline("b= \n\r");
+    $c = readline("c= \n\r");
+    $result = $answer->solve($a, $b, $c);
     $str = implode("", $result);
-    $log2::log($str);
-} catch (Exception $error) {
-    $log2::log($error);
+    $mes = "Корни уравнения.";
+    timofeev\Mylog::log("\n\r". $mes . "\n\r". $str);
+
+} catch (Exception $err) {
+    timofeev\Mylog::log($err);
 }
 
-
+timofeev\Mylog::write();

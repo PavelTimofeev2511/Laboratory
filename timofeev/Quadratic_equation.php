@@ -1,12 +1,10 @@
 <?php
 
-
 namespace timofeev;
 
 use core\EquationInterface;
-use mysql_xdevapi\Exception;
 
-class Quadratic_equation extends Linear_equation implements EquationInterface
+class QuadraticEquation extends LinearEquation implements EquationInterface
 {
     public $d;
 
@@ -21,9 +19,10 @@ class Quadratic_equation extends Linear_equation implements EquationInterface
             return $this->x = [(-1 * $b + sqrt($this->d)) / (2 * $a)];
         }
         if ($this->d < 0) {
-            $error = 'error';
-            throw new Exception($error);
+            $error = 'Уравнение не имеет решения';
+            throw new TimofeevExeption($error);
         }
+        Mylog::Instance()->log("Квадратное уравнение");
         return $this->x = [(-1 * $b - sqrt($this->d)) / (2 * $a), (-1 * $b + sqrt($this->d)) / (2 * $a)];
 
 
