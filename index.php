@@ -2,36 +2,52 @@
 
 class A
 {
+    protected $x;
 
+    public function linear_equation($a, $b)
+    {
+        if ($a == 0) {
+            $error = 'error';
+            throw new Error($error);
+        }
+        return $this->x = [(-$b) / $a];
+    }
 }
 
 class B extends A
 {
-    public function __construct($a)
+    public $d;
+
+    public function quadratic_equation($a, $b, $c)
     {
-        $this->a = $a;
+        if ($a == 0) {
+            return $this->linear_equation($a, $b);
+        }
+
+        $this->d = $this->discriminant($a, $b, $c);
+        if ($this->d == 0) {
+            return $this->x = [(-1 * $b + sqrt($this->d)) / (2 * $a)];
+        }
+        if ($this->d < 0) {
+            $error = 'error';
+            throw new Error($error);
+        }
+        return $this->x = [(-1 * $b - sqrt($this->d)) / (2 * $a), (-1 * $b + sqrt($this->d)) / (2 * $a)];
+
+
     }
 
-    protected $a;
-}
-
-class C extends B
-{
-    public function __construct($a, $b, $c)
+    protected function discriminant($a, $b, $c)
     {
-        $this->b = $b;
-        $this->c = $c;
-        parent::__construct($a);
+        return ($b * $b) - (4 * $a * $c);
     }
 
-    protected $b;
-    protected $c;
+
 }
 
-$a1 = new A();
-$a2 = new A();
-$b3 = new B($a2);
-$b4 = new B($b3);
-$c5 = new C($a1, $a2, $b4);
+$a = new A();
+$b = new B();
 
-var_dump($c5);
+$otv = $b->quadratic_equation(3.2, -5, 1);
+
+var_dump($otv) ;
