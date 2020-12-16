@@ -14,11 +14,6 @@ class MyLog extends LogAbstract implements LogInterface
         LogAbstract::Instance()->_log($str);
     }
 
-    public  function _log($str)
-    {
-        array_push( $this->log,$str);
-    }
-
 
     public static function write()
     {
@@ -30,5 +25,17 @@ class MyLog extends LogAbstract implements LogInterface
         foreach (LogAbstract::Instance()->log as $value) {
             echo $value;
         }
+        $d = new \DateTime();
+        $file = "./Log/". $d->format('d-m-Y\TH_i_s_u').".log";
+        if (!is_dir('./Log/'))
+        {
+            mkdir("./Log/");
+        }
+        file_put_contents($file, $this->log);
+
+    }
+    public function _log($str)
+    {
+        $this->log[] = $str;
     }
 }

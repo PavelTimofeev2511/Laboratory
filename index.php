@@ -13,6 +13,7 @@ $answer = new timofeev\QuadraticEquation();
 
 
 try {
+    timofeev\MyLog::log("Version: " . trim(file_get_contents("version")) . "\n");
     $a = readline("a= \n\r");
     $b = readline("b= \n\r");
     $c = readline("c= \n\r");
