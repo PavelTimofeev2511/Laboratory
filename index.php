@@ -1,13 +1,6 @@
 <?php
 
-include 'core/EquationInterface.php';
-include 'core/LogInterface.php';
-include 'core/LogAbstract.php';
-
-include 'timofeev/TimofeevExeption.php';
-include 'timofeev/linear_equation.php';
-include 'timofeev/quadratic_equation.php';
-include 'timofeev/Mylog.php';
+require __DIR__ . "/vendor/autoload.php";
 
 $answer = new timofeev\QuadraticEquation();
 
