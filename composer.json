@@ -1,0 +1,21 @@
+{
+  "name": "paveltimofeev2511/laboratory",
+  "type": "project",
+  "license": "MIT",
+  "scripts": {
+    "post-install-cmd": "git symbolic-ref --short -q HEAD > version"
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/PavelTimofeev2511/mdk-02.03.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/rok9ru/trpo-core.git"
+    }
+  ],
+  "require": {
+    "paveltimofeev2511/mdk-02.03": "^1.0"
+  }
+}
