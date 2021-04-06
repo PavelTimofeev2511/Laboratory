@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PavelTimofeev2511/mdk-02.03.git",
-                "reference": "4783dcfb041dbd87472024e092f78d71974029db"
+                "reference": "e771edd32933d3eaa0bedfdf078ce4666f5d758c"
             },
             "require": {
                 "rok9ru/trpo-core": "^2.0"
