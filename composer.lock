@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PavelTimofeev2511/mdk-02.03.git",
-                "reference": "e771edd32933d3eaa0bedfdf078ce4666f5d758c"
+                "reference": "b869fbaf47c1e720f563dc5dfa43bf2a132face6"
             },
             "require": {
                 "rok9ru/trpo-core": "^2.0"
@@ -22,9 +22,6 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "timofeev\\": "src"
-                },
                 "classmap": [
                     "src/"
                 ]
@@ -32,7 +29,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2021-04-06T12:34:45+00:00"
+            "time": "2021-04-09T12:40:38+00:00"
         },
         {
             "name": "rok9ru/trpo-core",
